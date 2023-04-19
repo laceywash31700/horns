@@ -34,8 +34,8 @@ class Main extends React.Component{
     data.forEach(beast =>{
         theBeast.push(
             <HornedBeast
-            title ={beast.tile}
-            image_Url={beast.image_url}
+            title ={beast.title}
+            image_url={beast.image_url}
             description={beast.description} 
             />)
     })
