@@ -36,6 +36,7 @@ class HornedBeast extends React.Component {
                     <Card.Img variant="top" src={this.props.image_url} />
                     <Card.Body>
                         <Card.Title> A {this.props.title}</Card.Title>
+                        <Card.Text>{this.props.description}</Card.Text>
                         <Button variant="primary" onClick={this.incLike}> 
                         {this.state.likes} <Emoji symbol='👍' />
                         </Button>
