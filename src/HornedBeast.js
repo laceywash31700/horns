@@ -16,15 +16,13 @@ class HornedBeast extends React.Component {
 
     incDislike = () => {
         this.setState({
-            like: this.state.likes,
-            disLike: this.state.dislikes + 1
+            dislikes: this.state.dislikes + 1
         })
     }
     
     incLike = () => {
         this.setState({
             likes: this.state.likes + 1,
-            disLike: this.state.dislikes
         })
     }
 
