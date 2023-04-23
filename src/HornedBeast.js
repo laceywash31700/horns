@@ -5,14 +5,16 @@ import Card from 'react-bootstrap/Card';
 
 
 
+
 class HornedBeast extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             likes: 0,
-            dislikes: 0
+            dislikes: 0,
         }
     }
+
 
     incDislike = () => {
         this.setState({
@@ -26,14 +28,20 @@ class HornedBeast extends React.Component {
         })
     }
 
+    handleModal = () => {
+        console.log('from modal')
+        this.props.useBeast(this.props.beast);
+        this.props.openSelectedBeast();
+    }
+
 
     render() {
         return (
             <>
                 <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={this.props.image_url} />
+                    <Card.Img variant="top" src={this.props.image_url} onClick={this.handleModal}/>
                     <Card.Body>
-                        <Card.Title> A {this.props.title}</Card.Title>
+                        <Card.Title>{this.props.title}</Card.Title>
                         <Card.Text>{this.props.description}</Card.Text>
                         <Button variant="primary" onClick={this.incLike}> 
                         {this.state.likes} <Emoji symbol='👍' />

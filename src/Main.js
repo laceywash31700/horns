@@ -8,11 +8,15 @@ import './Main.css'
 
 class Main extends React.Component {
     render() {
-        const theBeasts = data.map(beast =>
+        const theBeasts = data.map((beast,idx) =>
             < HornedBeast
-                title={beast.title}
-                image_url={beast.image_url}
-                description={beast.description}
+            key={idx}
+            openSelectedBeast={this.props.openSelectedBeast}
+            useBeast={this.props.useBeast}
+            title={beast.title}
+            image_url={beast.image_url}
+            description={beast.description}
+            beast={beast}
             />)
 
 
