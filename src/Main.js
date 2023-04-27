@@ -1,6 +1,5 @@
 import React from "react";
 import HornedBeast from "./HornedBeast";
-import data from "./data.json"
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -8,17 +7,17 @@ import './Main.css'
 
 class Main extends React.Component {
     render() {
-        const theBeasts = data.map((beast,idx) =>
+        const theBeasts = this.props.filteredBeast.map((beast,idx) =>
             < HornedBeast
-            key={idx}
+            filteredBeast={this.props.filteredBeast}
             openSelectedBeast={this.props.openSelectedBeast}
             useBeast={this.props.useBeast}
-            title={beast.title}
-            image_url={beast.image_url}
-            description={beast.description}
             beast={beast}
+            key={idx}
+            title={beast.title}
+            description={beast.description}
+            image_url={beast.image_url}
             />)
-
 
         return (
             <>
