@@ -30,7 +30,6 @@ class App extends React.Component {
   filterBeast = (e) => {
     e.preventDefault();
     let filteredArr = e.target.value!=='0' ? this.state.filteredBeast.filter(v=>v.horns===parseInt(e.target.value)): data
-    filteredArr === 1
     this.setState({filteredBeast: filteredArr})
   }
 
