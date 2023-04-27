@@ -15,7 +15,7 @@ class HornedBeast extends React.Component {
         }
     }
 
-
+    
     incDislike = () => {
         this.setState({
             dislikes: this.state.dislikes + 1
@@ -27,14 +27,12 @@ class HornedBeast extends React.Component {
             likes: this.state.likes + 1,
         })
     }
-
+    
     handleModal = () => {
-        console.log('from modal')
         this.props.useBeast(this.props.beast);
         this.props.openSelectedBeast();
     }
-
-
+    
     render() {
         return (
             <>
