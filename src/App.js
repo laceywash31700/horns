@@ -13,8 +13,7 @@ class App extends React.Component {
     this.state = {
       selectedModal: false,
       beast: {},
-      data: data,
-      filteredBeast: data
+      filteredBeast: data,
     }
   }
   openSelectedBeast = () => {
@@ -29,7 +28,7 @@ class App extends React.Component {
   
   filterBeast = (e) => {
     e.preventDefault();
-    let filteredArr = e.target.value!=='0' ? this.state.filteredBeast.filter(v=>v.horns===parseInt(e.target.value)): data
+    let filteredArr = e.target.value!=='0' ? data.filter(v=>v.horns===parseInt(e.target.value)): data 
     this.setState({filteredBeast: filteredArr})
   }
 
